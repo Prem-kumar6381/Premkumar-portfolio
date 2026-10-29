@@ -123,18 +123,44 @@ export const ProjectModal = ({ project, onClose, isDark }) => {
         </div>
 
         {/* Modal Footer */}
-        <div className={`p-6 border-t flex items-center justify-between gap-4 ${
+        <div className={`p-6 border-t flex flex-col sm:flex-row items-center justify-between gap-4 ${
           isDark ? 'bg-slate-950/80 border-slate-800' : 'bg-slate-50 border-slate-200'
         }`}>
-          <div className="text-xs text-slate-400">
-            {project.company ? `Developed at ${project.company}` : 'Engineered by Prem Kumar R'}
+          <div className="text-xs text-slate-400 text-center sm:text-left">
+            {project.isProprietary ? (
+              <span className="inline-flex items-center gap-1.5 text-indigo-400 font-medium">
+                <ShieldCheck className="w-4 h-4 text-indigo-400" />
+                Proprietary Enterprise Software • Source code confidential
+              </span>
+            ) : project.company ? (
+              `Developed at ${project.company}`
+            ) : (
+              'Engineered by Prem Kumar R'
+            )}
           </div>
-          <button
-            onClick={onClose}
-            className="px-5 py-2.5 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white shadow-md transition-all"
-          >
-            Close Overview
-          </button>
+          <div className="flex items-center gap-3">
+            {project.repoUrl && (
+              <a
+                href={project.repoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-semibold bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white shadow-md transition-all"
+              >
+                <span>Explore Source Code</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            )}
+            <button
+              onClick={onClose}
+              className={`px-5 py-2.5 rounded-xl text-xs font-semibold border transition-all ${
+                isDark 
+                  ? 'bg-slate-800 hover:bg-slate-700 text-slate-200 border-slate-700' 
+                  : 'bg-white hover:bg-slate-100 text-slate-700 border-slate-300'
+              }`}
+            >
+              Close Overview
+            </button>
+          </div>
         </div>
       </div>
     </div>

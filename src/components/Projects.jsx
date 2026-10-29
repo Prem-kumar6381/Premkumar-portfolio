@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { 
-  FolderGit2, ExternalLink, ArrowRight, Sparkles, 
-  Layers, Code2, Server, Database, Radio 
+  FolderGit2, ExternalLink, ArrowRight, Sparkles, ShieldCheck
 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import { ProjectModal } from './ProjectModal';
@@ -12,17 +11,20 @@ export const Projects = ({ isDark }) => {
   const [filter, setFilter] = useState('all');
 
   const categories = [
-    { id: 'all', label: 'All Projects' },
+    { id: 'all', label: 'All Projects (4)' },
     { id: 'enterprise', label: 'Enterprise Systems' },
-    { id: 'ai', label: 'AI & Intelligence' },
-    { id: 'realtime', label: 'Real-Time / Sockets' },
+    { id: 'ai', label: 'Generative AI' },
+    { id: 'frontend', label: 'Frontend & Web' },
   ];
 
   const getFilteredProjects = () => {
     if (filter === 'all') return projects;
     if (filter === 'enterprise') return projects.filter(p => p.category.toLowerCase().includes('enterprise'));
-    if (filter === 'ai') return projects.filter(p => p.category.toLowerCase().includes('ai'));
-    if (filter === 'realtime') return projects.filter(p => p.category.toLowerCase().includes('real-time'));
+    if (filter === 'ai') return projects.filter(p => p.category.toLowerCase().includes('ai') || p.category.toLowerCase().includes('generative'));
+    if (filter === 'frontend') return projects.filter(p => 
+      p.category.toLowerCase().includes('frontend') || 
+      p.category.toLowerCase().includes('web')
+    );
     return projects;
   };
 
@@ -50,7 +52,7 @@ export const Projects = ({ isDark }) => {
           <p className={`text-sm sm:text-base max-w-2xl ${
             isDark ? 'text-slate-400' : 'text-slate-600'
           }`}>
-            A selection of production enterprise software, real-time collaboration platforms, and AI knowledge retrieval systems.
+            A curated selection of enterprise engineering, full-stack generative AI systems, responsive web applications, and technical showcases.
           </p>
 
           {/* Filter Buttons */}
@@ -90,12 +92,19 @@ export const Projects = ({ isDark }) => {
                   <span className="px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-white/20 text-white backdrop-blur-md">
                     {project.category}
                   </span>
-                  {project.featured && (
-                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/30 text-emerald-200 border border-emerald-400/30 flex items-center gap-1">
-                      <Sparkles className="w-3 h-3" />
-                      Featured
-                    </span>
-                  )}
+                  <div className="flex items-center gap-2">
+                    {project.isProprietary ? (
+                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-indigo-500/30 text-indigo-100 border border-indigo-400/30 flex items-center gap-1">
+                        <ShieldCheck className="w-3 h-3" />
+                        Enterprise Experience
+                      </span>
+                    ) : project.featured && (
+                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/30 text-emerald-200 border border-emerald-400/30 flex items-center gap-1">
+                        <Sparkles className="w-3 h-3" />
+                        Featured
+                      </span>
+                    )}
+                  </div>
                 </div>
 
                 <h3 className="text-xl sm:text-2xl font-bold font-['Space_Grotesk'] text-white">
@@ -117,7 +126,7 @@ export const Projects = ({ isDark }) => {
 
                   {/* Highlights preview */}
                   <div className="space-y-2 mb-6">
-                    {project.highlights.slice(0, 2).map((h, i) => (
+                    {project.highlights.map((h, i) => (
                       <div key={i} className="flex items-start gap-2 text-xs">
                         <span className="text-indigo-400 mt-0.5">•</span>
                         <span className={isDark ? 'text-slate-400' : 'text-slate-600'}>
@@ -131,7 +140,7 @@ export const Projects = ({ isDark }) => {
                 {/* Tech Chips & Action Button */}
                 <div className="pt-4 border-t border-slate-800/40 space-y-4">
                   <div className="flex flex-wrap gap-1.5">
-                    {project.techStack.slice(0, 5).map((tech, i) => (
+                    {project.techStack.map((tech, i) => (
                       <span
                         key={i}
                         className={`text-[11px] px-2.5 py-1 rounded-lg border font-mono font-medium ${
@@ -143,20 +152,46 @@ export const Projects = ({ isDark }) => {
                         {tech}
                       </span>
                     ))}
-                    {project.techStack.length > 5 && (
-                      <span className="text-[11px] px-2 py-1 text-slate-400">
-                        +{project.techStack.length - 5} more
-                      </span>
-                    )}
                   </div>
 
-                  <button
-                    onClick={() => setSelectedProject(project)}
-                    className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-xs sm:text-sm font-semibold tracking-wide text-white bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 shadow-md transition-all group-hover:scale-[1.01]"
-                  >
-                    <span>Inspect Architecture & Details</span>
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </button>
+                  {/* Action Buttons */}
+                  <div>
+                    {project.isProprietary ? (
+                      <button
+                        onClick={() => setSelectedProject(project)}
+                        aria-label={`Open professional experience details for ${project.title}`}
+                        className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-xs sm:text-sm font-semibold tracking-wide text-white bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 shadow-md transition-all group-hover:scale-[1.01]"
+                      >
+                        <span>Professional Experience</span>
+                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                      </button>
+                    ) : (
+                      <div className="flex items-center gap-2">
+                        <a
+                          href={project.repoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`Explore source code for ${project.title} on GitHub (opens in a new tab)`}
+                          className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-xs sm:text-sm font-semibold tracking-wide text-white bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 shadow-md transition-all group-hover:scale-[1.01]"
+                        >
+                          <span>Explore Source Code</span>
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                        <button
+                          onClick={() => setSelectedProject(project)}
+                          aria-label={`View architecture overview for ${project.title}`}
+                          title="View Architecture & Details"
+                          className={`px-3.5 py-3 rounded-xl text-xs sm:text-sm font-semibold border transition-all shrink-0 ${
+                            isDark
+                              ? 'bg-slate-900 border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-white'
+                              : 'bg-slate-100 border-slate-200 text-slate-700 hover:bg-slate-200'
+                          }`}
+                        >
+                          <span>Overview</span>
+                        </button>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
@@ -174,3 +209,4 @@ export const Projects = ({ isDark }) => {
     </section>
   );
 };
+

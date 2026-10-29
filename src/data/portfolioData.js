@@ -133,106 +133,150 @@ export const portfolioData = {
     {
       id: "oat-platform",
       title: "One Awesome Team (OAT)",
-      subtitle: "Enterprise Collaboration & Skills Management Platform",
-      category: "Enterprise Platform",
+      subtitle: "Enterprise Collaboration, Workforce Management & Real-Time Communication Platform",
+      category: "Enterprise Software Engineering",
       featured: true,
-      role: "Core Software Engineer",
+      isProprietary: true,
+      repoUrl: null,
+      buttonLabel: "Professional Experience",
+      role: "Software Engineer",
       company: "KaiDP Technologies LLP",
       duration: "Dec 2024 – Present",
-      description: "An enterprise-grade team collaboration and employee administration platform supporting multi-tenant workforce management, live discussions, skill directories, and announcement feeds.",
-      longDescription: "Contributed extensively to the end-to-end frontend architecture and backend service integration of One Awesome Team (OAT). Built scalable components for team structure administration, skill matrices, and organization-wide broadcasts. Integrated SignalR for instant chat streaming and real-time updates across distributed departments, backed by optimized SQL Server queries.",
+      description: "An enterprise-grade collaboration and workforce management platform integrating employee administration, competency tracking, organizational communication, and real-time discussion capabilities within a unified application ecosystem.",
+      longDescription: "Contributed as a Software Engineer to the One Awesome Team (OAT) enterprise platform developed by KaiDP Technologies LLP. Developed responsive React user interfaces, modular UI components, and enterprise workflows using Bootstrap and Ant Design. Integrated RESTful APIs with ASP.NET and Entity Framework Core backed by Microsoft SQL Server, implemented real-time messaging and discussion features using SignalR, and contributed to stored procedure optimization, feature testing, and production issue investigations.",
       highlights: [
-        "Engineered real-time chat and discussion rooms with SignalR WebSockets",
-        "Developed skills matrix & employee competency tracking modules",
-        "Optimized complex SQL Server stored procedures, reducing query latency",
-        "Delivered responsive, accessible UI compliant with enterprise standards using Ant Design and Bootstrap"
+        "Contributed to responsive React interfaces, reusable UI components, and enterprise workflows using Bootstrap and Ant Design.",
+        "Integrated RESTful APIs and supported backend functionality implemented with ASP.NET and Entity Framework Core, backed by Microsoft SQL Server.",
+        "Worked on real-time messaging and group discussion functionality using SignalR, including event handling and troubleshooting.",
+        "Supported SQL query and stored procedure optimization, feature testing, bug resolution, and production issue investigation."
       ],
-      techStack: ["React.js", "ASP.NET (C#)", "Microsoft SQL Server", "SignalR", "JavaScript", "Ant Design", "Bootstrap"],
+      techStack: [
+        "React.js",
+        "JavaScript",
+        "Bootstrap",
+        "Ant Design",
+        "ASP.NET / C#",
+        "Entity Framework Core",
+        "Microsoft SQL Server",
+        "SignalR",
+        "REST APIs",
+        "Git"
+      ],
       gradient: "from-blue-600/30 via-indigo-600/20 to-purple-600/30",
       accentColor: "indigo",
       stats: [
-        { label: "Architecture", value: "Enterprise" },
-        { label: "Sync Engine", value: "SignalR" },
-        { label: "Backend", value: "ASP.NET C#" },
+        { label: "Deployment", value: "Enterprise" },
+        { label: "Real-Time", value: "SignalR" },
+        { label: "Backend", value: "ASP.NET Core" },
         { label: "Database", value: "MS SQL Server" }
-      ]
-    },
-    {
-      id: "rag-ai-search",
-      title: "DocuQuery AI — RAG Search Assistant",
-      subtitle: "Knowledge Retrieval & Generative AI Assistant",
-      category: "AI & Full-Stack",
-      featured: true,
-      role: "Architect & Developer",
-      duration: "Recent Project",
-      description: "An intelligent retrieval-augmented generation (RAG) platform allowing users to index technical documentation and query knowledge bases using natural language.",
-      longDescription: "Conceptualized and built to explore state-of-the-art Generative AI techniques. Integrates vector embeddings with LLM inference to provide grounded answers with citations. Features a responsive modern React dashboard with conversational streaming responses.",
-      highlights: [
-        "Implemented semantic vector retrieval and context synthesis pipeline",
-        "Built dynamic React interface with streaming token response animation",
-        "Designed citation highlight and source inspection modal",
-        "Integrated modern Tailwind CSS with seamless dark mode support"
-      ],
-      techStack: ["React.js", "Generative AI", "RAG", "Python / Node.js", "Tailwind CSS", "REST API"],
-      gradient: "from-emerald-600/30 via-teal-600/20 to-cyan-600/30",
-      accentColor: "emerald",
-      stats: [
-        { label: "Core Model", value: "LLM / RAG" },
-        { label: "Response", value: "Streaming" },
-        { label: "UI Design", value: "Tailwind v4" },
-        { label: "Domain", value: "AI Knowledge" }
-      ]
-    },
-    {
-      id: "realtime-presence",
-      title: "PulseSync — Real-Time Presence & Chat Hub",
-      subtitle: "High-Frequency WebSocket Discussion Engine",
-      category: "Real-Time Systems",
-      featured: true,
-      role: "Full-Stack Developer",
-      duration: "Featured Showcase",
-      description: "A showcase real-time communication interface demonstrating SignalR messaging, user presence indicators, typing indicators, and optimistic UI updates.",
-      longDescription: "Built to demonstrate mastery of bidirectional socket communications. Highlights resilient connection retry policies, channel subscription patterns, message delivery receipts, and responsive UI states.",
-      highlights: [
-        "SignalR hub integration with automatic reconnection handling",
-        "Real-time user status, online beacons, and live typing indicators",
-        "Optimistic UI updates for ultra-fast perceived response times",
-        "Clean, minimalist Western aesthetic with glassmorphic cards"
-      ],
-      techStack: ["React.js", "SignalR", "ASP.NET Core", "CSS3 / Tailwind", "JavaScript"],
-      gradient: "from-cyan-600/30 via-blue-600/20 to-indigo-600/30",
-      accentColor: "cyan",
-      stats: [
-        { label: "Protocol", value: "WebSockets" },
-        { label: "State", value: "Optimistic" },
-        { label: "Latency", value: "<50ms" },
-        { label: "Interface", value: "Mobile First" }
       ]
     },
     {
       id: "portfolio-pro",
       title: "Prem Kumar Portfolio 2.0",
-      subtitle: "Modern Western-Style High-Performance Portfolio",
-      category: "Frontend & UI/UX",
-      featured: false,
-      role: "Designer & Engineer",
-      duration: "Current",
-      description: "The interactive portfolio you are currently browsing, built with React, Vite, Tailwind CSS v4, Lucide icons, and responsive glassmorphism.",
-      longDescription: "Engineered to reflect Western design principles: clean typography, generous whitespace, high contrast, smooth transitions, interactive education matrix, and instant resume viewer.",
+      subtitle: "Interactive Developer Portfolio & Technical Showcase",
+      category: "Frontend Engineering & UI/UX",
+      featured: true,
+      isProprietary: false,
+      repoUrl: "https://github.com/Prem-kumar6381/Premkumar-portfolio",
+      buttonLabel: "Explore Source Code",
+      role: "Frontend Engineer & Designer",
+      duration: "Active Project",
+      description: "A responsive personal portfolio engineered to showcase my technical competencies, professional experience, and selected software projects through an interactive and visually refined interface.",
+      longDescription: "Engineered a modern, responsive personal portfolio utilizing React 19, Vite 8, and Tailwind CSS v4. Features include an interactive qualification matrix, structured project showcases with modal deep-dives, proficiency visualization meters, integrated curriculum vitae modal with clean print stylesheets, and seamless light/dark mode switching.",
       highlights: [
-        "Interactive Qualification matrix with comparative score visualizers",
-        "Filterable skill cards with proficiency metrics and experience breakdown",
-        "Integrated interactive resume modal with print/download functionality",
-        "Accessible, high-performance, and 100% responsive across mobile and desktop"
+        "Developed reusable React components and responsive layouts with modern styling and interactive navigation.",
+        "Implemented structured project showcases and dynamic skill presentations to improve content discoverability and user engagement."
       ],
-      techStack: ["React.js", "Tailwind CSS v4", "Vite", "Lucide React", "Canvas Confetti"],
+      techStack: [
+        "React.js",
+        "JavaScript",
+        "Vite",
+        "Tailwind CSS",
+        "HTML5",
+        "CSS3",
+        "Git",
+        "GitHub"
+      ],
       gradient: "from-violet-600/30 via-purple-600/20 to-pink-600/30",
       accentColor: "violet",
       stats: [
-        { label: "Lighthouse", value: "100/100" },
-        { label: "Build Tool", value: "Vite v8" },
+        { label: "Frontend", value: "React 19" },
+        { label: "Tooling", value: "Vite 8" },
         { label: "Styling", value: "Tailwind v4" },
-        { label: "Icons", value: "Lucide" }
+        { label: "Repository", value: "Public GitHub" }
+      ]
+    },
+    {
+      id: "nexora-ai",
+      title: "Nexora AI — AI Study Assistant",
+      subtitle: "Intelligent Conversational Assistant with LLM Integration",
+      category: "Generative AI & Full-Stack Engineering",
+      featured: true,
+      isProprietary: false,
+      repoUrl: "https://github.com/Prem-kumar6381/AIStudyAssistant",
+      buttonLabel: "Explore Source Code",
+      role: "Full-Stack Developer",
+      duration: "Active Development",
+      description: "A full-stack AI assistant application integrating a large language model with a conversational user interface, backend API services, and persistent conversation management.",
+      longDescription: "Engineered Nexora AI as a full-stack educational assistant application. Built a responsive React client interface and connected it via Axios to an ASP.NET Core 8 Web API. Integrated Google Gemini API for study assistance and topic exploration. Implemented PBKDF2 password hashing, JWT Bearer and cookie-based authentication, and persistent relational conversation storage with strict per-user isolation in MySQL via Entity Framework Core 8.",
+      highlights: [
+        "Integrated AI chat functionality through an ASP.NET Core Web API and a React-based frontend.",
+        "Implemented user authentication and persistent conversation management using MySQL, according to the existing application implementation.",
+        "Developed backend services and API integrations to connect the conversational interface with the configured AI provider.",
+        "Explored LLM application architecture and AI-assisted learning workflows through hands-on development."
+      ],
+      techStack: [
+        "React.js",
+        "JavaScript",
+        "ASP.NET Core 8",
+        "C#",
+        "Entity Framework Core",
+        "MySQL",
+        "REST APIs",
+        "Google Gemini API"
+      ],
+      gradient: "from-emerald-600/30 via-teal-600/20 to-cyan-600/30",
+      accentColor: "emerald",
+      stats: [
+        { label: "AI Integration", value: "Google Gemini" },
+        { label: "Backend", value: "ASP.NET Core 8" },
+        { label: "ORM / DB", value: "EF Core / MySQL" },
+        { label: "Security", value: "JWT & PBKDF2" }
+      ]
+    },
+    {
+      id: "m2-infosolutions",
+      title: "M2 InfoSolutions — Corporate Website",
+      subtitle: "Responsive Corporate Website for a Karaikudi-Based Startup",
+      category: "Web Development & Professional Training",
+      featured: true,
+      isProprietary: false,
+      repoUrl: "https://github.com/Prem-kumar6381/M2InfoSolutions",
+      buttonLabel: "Explore Source Code",
+      role: "Frontend Web Developer (Training)",
+      duration: "Industry Training (2024)",
+      description: "Designed and developed a static corporate website for M2 InfoSolutions, a startup based in Karaikudi, as part of my professional development training before joining my current employer.",
+      longDescription: "Developed a clean and responsive corporate website for Karaikudi-based startup M2 InfoSolutions during comprehensive industry web development training at LetSify Sigma4Solution. Structured the site with Angular and TypeScript, implementing Bootstrap components for consistent typography, responsive navigation bars, content sections, and mobile-friendly layouts.",
+      highlights: [
+        "Developed structured and responsive web pages using Angular and TypeScript with Bootstrap-based styling.",
+        "Organized corporate information and website content into a consistent, accessible, and user-friendly interface.",
+        "Applied foundational frontend engineering principles to create a maintainable website layout across different screen sizes."
+      ],
+      techStack: [
+        "Angular",
+        "TypeScript",
+        "HTML5",
+        "CSS3",
+        "Bootstrap"
+      ],
+      gradient: "from-amber-600/30 via-orange-600/20 to-rose-600/30",
+      accentColor: "amber",
+      stats: [
+        { label: "Framework", value: "Angular" },
+        { label: "Language", value: "TypeScript" },
+        { label: "Styling", value: "Bootstrap 5" },
+        { label: "Context", value: "Industry Training" }
       ]
     }
   ],

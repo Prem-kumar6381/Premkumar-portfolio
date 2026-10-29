@@ -38,10 +38,10 @@ A modern, high-performance developer portfolio built with **React**, **Vite**, a
   - Filterable tabs: *All Technologies*, *Frontend & UI*, *Backend & Real-Time*, *Database & SQL*, *AI, Tools & Cloud*.
   - Proficiency visual meters, experience duration tags, and technical specialty highlights.
 - **Selected Project Showcase**:
-  - **One Awesome Team (OAT)** — Enterprise Collaboration & Skills Platform
-  - **DocuQuery AI** — RAG Knowledge Search Assistant
-  - **PulseSync** — High-Frequency WebSockets Presence & Discussion Hub
-  - **Prem Kumar Portfolio 2.0** — High-Performance Western Portfolio
+  - **One Awesome Team (OAT)** — Enterprise Collaboration, Workforce Management & Real-Time Communication Platform
+  - **Prem Kumar Portfolio 2.0** — Interactive Developer Portfolio & Technical Showcase
+  - **Nexora AI — AI Study Assistant** — Intelligent Conversational Assistant with LLM Integration
+  - **M2 InfoSolutions — Corporate Website** — Responsive Corporate Website for a Karaikudi-Based Startup
   - Interactive **Architecture & Deep Dive Inspection Modal** for every project.
 - **Interactive Resume Modal**:
   - Full-fidelity curriculum vitae viewable directly in-app.
